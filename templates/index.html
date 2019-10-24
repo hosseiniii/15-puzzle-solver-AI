@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border=1>
+        {% for i in range(4) %}
+            <tr>
+                {% for j in range(4) %}
+                    <td> {{ data[i][j] }} </td>
+                {% endfor %}
+            </tr>
+         {% endfor %}
+    </table>
+
+    <a href="{{ url_for('solve') }}"> <button type="button">Solve</button> </a>
+</body>
+</html>
