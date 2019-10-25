@@ -1,11 +1,11 @@
-######################################################################
-#                                                                    #
-#   Name: Seyyed Sadegh Hosseini                                     #
-#   Project: Numbers Puzzle (AI First Project)                       #
-#   Teacher: Dr. Hossein Ebrahimpour                                 #
-#   Date: 2019-Oct-24                                                #
-#                                                                    #
-######################################################################
+####################################################################
+#                                                                  #
+#   Name: Seyyed Sadegh Hosseini                                   #
+#   Project: Numbers Puzzle (AI First Project)                     #
+#   Teacher: Dr. Hossein Ebrahimpour                               #
+#   Date: 2019-Oct-24                                              #
+#                                                                  #
+####################################################################
 
 from flask import Flask, render_template
 from flaskwebgui import FlaskUI
@@ -28,7 +28,6 @@ def index():
 def solve():
     solved = solve_puzzle(d)
     return render_template("solve.html", data=solved)
-
 
 
 ui.run()
