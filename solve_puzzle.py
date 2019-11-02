@@ -25,9 +25,10 @@ def solve_puzzle(puzzle):
         return p
 
     possible_ways = queue.Queue()
+    parent = ""
 
     while not check_answer(p):
-        p = solve(p, possible_ways)
+        p = solve(p, possible_ways, parent)
 
 
 def check_answer(puzzle):
@@ -105,10 +106,10 @@ def move(puzzle, select, row, col):
     return puzzle
 
 
-def solve(p, possible_ways):
+def solve(p, possible_ways, parent):
 
     for w in get_available_ways(p):
-        possible_ways.put(w)
+        possible_ways.put(parent + w)
 
     select = possible_ways.get()
 
