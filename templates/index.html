@@ -2,48 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="">
-    <title>صفحه اصلی</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+
+    <title>پازل ۱۵</title>
 </head>
 <body>
-<!--    <h2>صفحه اصلی</h2>-->
-<!--    <table border=1>-->
-<!--        {% for i in range(4) %}-->
-<!--            <tr>-->
-<!--                {% for j in range(4) %}-->
-<!--                    <td> {{ data[i][j] }} </td>-->
-<!--                {% endfor %}-->
-<!--            </tr>-->
-<!--         {% endfor %}-->
-<!--    </table>-->
-
 <!--    <a href="{{ url_for('solve') }}"> <button type="button">Solve</button> </a>-->
 
-    <div class="wrapper fadeInDown">
-        <div id="formContent">
-            <!-- Tabs Titles -->
-            <h2 class="active"> Sign In </h2>
-            <h2 class="inactive underlineHover">Sign Up </h2>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <h2 class="inactive underlineHover">اعداد تصادفی</h2>
+        <h2 class="active"> ورود دستی اعداد </h2>
 
-            <!-- Icon -->
-            <div class="fadeIn first">
-                <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon"/>
-            </div>
 
-            <!-- Login Form -->
-            <form>
-                <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-                <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-                <input type="submit" class="fadeIn fourth" value="Log In">
-            </form>
+        <table border=1 class="fadeIn second" id="num_table" >
+            {% for i in range(4) %}
+            <tr>
+                {% for j in range(4) %}
+                <td id="table_member"> {{ data[i][j] }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
 
-            <!-- Remind Passowrd -->
-            <div id="formFooter">
-                <a class="underlineHover" href="#">Forgot Password?</a>
-            </div>
-
-        </div>
     </div>
+</div>
 
 </body>
 </html>
